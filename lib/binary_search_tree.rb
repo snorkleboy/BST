@@ -74,10 +74,11 @@ class BinarySearchTree
 
     # child is what we are tring to delete
     child =find(value)
+    # if not found
+    return if !child
     parent = child.parent
     child_idx = parent.children.find_index{|child| child.value == value}
-    # if not found
-    return if !parent || !child
+    
 
     grandchildren = child.children.select{|grandchild| grandchild != nil}
     if (grandchildren.empty?)
