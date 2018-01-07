@@ -1,4 +1,4 @@
-require '/home/snorkeboy/Desktop/firstname_lastname/lib/bst_node.rb'
+require 'bst_node'
 
 # There are many ways to implement these methods, feel free to add arguments 
 # to methods as you see fit, or to create helper methods.
@@ -70,11 +70,12 @@ class BinarySearchTree
     # if child  has no children simply delete its reference in parent
     # if one grandchild swap parents reference to child with grandchild
     # if 2 children find max of left and swap
-    node =find(value)
-    parent = node.parent
+
+
     # child is what we are tring to delete
+    child =find(value)
+    parent = child.parent
     child_idx = parent.children.find_index{|child| child.value == value}
-    child = parent.children[child_idx]
     # if not found
     return if !parent || !child
 
