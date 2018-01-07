@@ -1,9 +1,15 @@
 class BSTNode
-    def initialize(value)
+    def initialize(value, parent = nil)
     @value = value
     @children = []
+    @parent = parent
   end
-
+  def parent=(node)
+    @parent = node
+  end
+  def parent
+    @parent
+  end
   def value
     @value
   end
